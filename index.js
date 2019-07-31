@@ -10,7 +10,7 @@ mongoose.connect(process.env.NODE_ENV==='development'?'mongodb://localhost/produ
 .then(()=>console.log('Connected to MongoDB...'))
 .catch((error)=>console.error('Cound not connect to MongoDB...'))
 
-app.use(cors)
+app.use(cors());
 app.use(express.json());
 
 app.use('/api/products', products)
