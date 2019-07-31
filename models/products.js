@@ -21,14 +21,10 @@ const Products = mongoose.model('Products', new mongoose.Schema({
   category: {
     type: String,
     required: true,
-    minlength: 5,
-    maxlength: 50
   },
   color: {
     type: String,
     required: true,
-    minlength: 5,
-    maxlength: 50
   },
 }));
 
