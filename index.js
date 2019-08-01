@@ -7,7 +7,7 @@ const files=require('./routes/files')
 
 const app = express();
 
-mongoose.connect(process.env.NODE_ENV!=='development'?'mongodb://localhost/products':'mongodb+srv://aziziraheem:b5oXsSPyaiTKhBfq@cluster0-ydsji.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true })
+mongoose.connect(process.env.NODE_ENV==='development'?'mongodb://localhost/products':'mongodb+srv://aziziraheem:b5oXsSPyaiTKhBfq@cluster0-ydsji.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true })
 .then(()=>console.log('Connected to MongoDB...'))
 .catch((error)=>console.error('Cound not connect to MongoDB...'))
 
