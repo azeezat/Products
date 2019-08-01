@@ -10,7 +10,7 @@ Clone the repo from github and install dependencies through npm.
 
 ```
 git clone https://github.com/azeezat/Products.git
-cd produts-web
+cd Produts
 npm install
 node index.js
 ```
