@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "pre:start": "heroku config -s >> .env",
+    "start": "npm run pre:start && node index.js ",
+    "start:local": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,8 +14,11 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
     "express": "^4.16.2",
+    "gridfs-stream": "^1.1.1",
     "joi": "^13.1.0",
+    "mongodb": "^3.3.0-beta2",
     "mongoose": "^5.5.8",
     "multer": "^1.4.2",
     "stream-buffers": "^3.0.2"

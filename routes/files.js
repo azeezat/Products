@@ -1,10 +1,16 @@
 const express = require('express');
 const router = express.Router();
 let multer = require('multer');
+let mongo = require('mongodb');
+var Grid = require('gridfs-stream');
 let streamBuffers = require('stream-buffers');
 const { MediaFile } = require('../models/files');
 
 var upload = multer();
+
+// create or use an existing mongodb-native db instance
+var db = new mongo.Db('yourDatabaseName', new mongo.Server("127.0.0.1", 27017));
+var gfs = Grid(db, mongo);
 
 router.post('/:id', upload.single('file'), (req, res) => {
 
